@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRONOMICS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="im/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+        body{
+            background-image: url("./img/bg4.jpg");
+        background-size: cover;
+        background-position: center;}
+    </style>
+</head>
+<body>
+    <!--navbar-->
+    <nav class="navbar glass" style="height: 70px;">
+        <span style="padding-top: 45px;"><a href="#home"><!--<img class="img2" src=".img/img.jpg" width="40"
+            style="margin: -25px -20px">--><h1 class="logo">AGRONOMICS</h1></a></span>
+        <ul class="nav-links">
+            <li><a href="index.html" id="pri" class="active cir_border">Home</a></li>
+            <li><a href="index.html"  id="sec" class="cir_border">Districts</a></li>
+            <li><a href="index.html" id="tri" class="cir_border">Explore</a></li>
+            <li><a href="index.html" id="quad" class="cir_border">Donations</a></li>
+            <!--<li><a href="#contribution" id="quint" class="cir_border">Contributions</a></li>-->
+            <li><a href="index.html" id="hex" class="cir_border">Contact Us</a></li>
+            <li><div>
+                <input type="checkbox" class="checkbox dark" id="checkbox">
+              <label for="checkbox" class="label">
+                <i class="fa fa-moon-o"></i>
+                <i class='fa fa-sun-o'></i>
+                <div class='ball'>
+              </label>
+            </div></li>
+        </ul>
+        <img src="./img/menu-btn.png" alt="" class="menu-btn">
+    </nav>
+    <section id="about" >
+        <div class="title">
+            <h1 class="font-color"><br>About Us</h1>
+            <div class="line"></div>
+        </div>
+        <div id="about_us">
+            <div class="boxx">
+                <p><b>Today's world where most people are  reluctant to become farmers, <br>we aim to  help people passionate about farming by trying to replicate <br>
+                    guidance provided by the older generation in the form of technology.
+                    <br>One can never return the favors owned to the farmers, we here at agronomics <br>as students of computer science 
+                    desire to serve as helping hands to all those farmers</b></p></div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <span>Created By Kishore,Khushi,Priya  | &#169 2023</span>
+        <div class="social">
+            <li>
+                <!--<a href="https://pritam-sarbajna-portfolio.netlify.app/" target="_blank" rel="noreferrer"><i class="fa fa-globe"></i></a>-->
+                <a href="https://github.com/priyasekhar13" target="_blank" rel="noreferrer"><i class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/devipriya-bogala/" target="_blank" rel="noreferrer"><i class="fa fa-linkedin-square"></i></a>
+            </li>
+        </div>
+    </section>
+    <!--footer-->
+
+    <script>
+        const menuBtn = document.querySelector('.menu-btn')
+        const navlinks = document.querySelector('.nav-links')
+
+        menuBtn.addEventListener('click',()=>{
+            navlinks.classList.toggle('mobile-menu')
+        })
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+1.valid
+
+<html>
+<body>
+<script>
+function validateform(){
+var name=document.myform.name.value;
+var email=document.myform.email.value;
+var phone=document.myform.phone.value;
+var password=document.myform.password.value;
+var confirmpassword=document.myform.confirmpassword.value;
+if (name === "") {
+    alert("Please enter your username.");
+    return;
+  }
+if(email == ""){
+alert("Please enter your email.");
+return;
+}
+if (phone==""){
+alert("PLease enter your phone number.");
+return;
+}
+if (phone.length!=10){
+alert("Please enter valid phone number.");
+return;
+}
+  if (password === "") {
+    alert("Please enter your password.");
+    return;
+  }
+if(password.length<6){
+alert("Password must contain atleats 6 characters");
+return;
+}
+  if (confirmpassword === "") {
+    alert("Please enter your password.");
+    return;
+  }
+if(password!=confirmpassword){
+alert("Passwords do not match");
+return;
+}
+};
+</script>
+<form name="myform" onsubmit="return validateform()">
+Name:<input type="text" name="name"><br>
+Email:<input type="email" name="email"><br>
+Phone Number:<input type="number" name="phone"><br>
+Password:<input type="password" name="password"><br>
+Confirm-Password:<input type="password" name="confirmpassword"><br>
+<input type="submit" value="login">
+</form></body></html>
+
+
+2. mail
+
+<html>
+<body>
+    <form action="email1.php" class="" method="'post">
+        Email:<input type="email" name="email" value=""><br>
+        Subject:<input type="text" name="subject" value=""><br>
+        Message:<input type="text" name="message" value=""><br>
+        <button type="submit" name ="send">Send</button>
+        </form>
+        <?php
+        use PHPMailer\PHPMailer\PHPMailer;
+        use PHPMailer\PHPMailer\SMTP;
+        use PHPMailer\PHPMailer\Exception;
+
+        require 'PHPMailer-master/src/Exception.php';
+        require 'PHPMailer-master/src/PHPMailer.php';
+        require 'PHPMailer-master/src/SMTP.php';
+
+        if(isset($_POST['send']))
+        {
+            $mail= new PHPMailer(true);
+
+            $mail->isSMTP();
+            $mail->Host='smtp.gmail.com';
+            $mail->SMTPAuth =true;
+            $mail->Username ='kiranupuvvada@gmail.com';
+            $mail->Password='vmtbittmnyjvtcru';
+
+            $mail->SMTPSecure ='ssl';
+            $mail->Port=467;
+            $mail->setFrom('kiranupuvvada@gmail.com');
+            $mail->addAddress($_POST['email']);
+            $mail->isHTML(true);
+            $mail->Subject =$_POST['subject'];
+            $mail->Body =$_POST['message'];
+    
+            $mail->send();
+
+            echo "<script>
+                  alert('Sent Successfully');
+                  document.location.href='email1.php';
+                  </script>";
+        }
+        ?>
+        </body>
+        </html>
+
+
+
+
+3.name
+
+<html>
+    <head>
+        <title>
+           SIGN IN
+        </title>
+    </head>
+    <body>
+          <center><b>SIGN IN</b></center><br><br>
+          <form action="pg2.php" method="POST">
+   				username
+                        <input type="text"placeholder="Username" id="username" name="username"required><br>
+				Password
+                        <input type="password"placeholder="Password" id="password" name="password" required><br>
+                       <input type="submit"value="Sign in">
+            </form>
+        </div>
+     </body> 
+</html>       
+
+#pg2.php
+
+<?php
+	$username = $_POST['username'];
+	echo $username
+?>
